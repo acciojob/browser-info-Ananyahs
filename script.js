@@ -1,23 +1,13 @@
 //your JS code here. If required.
-//your JS code here. If required.
+// Get the reference to the browser-info element
+const browserInfoElement = document.getElementById('browser-info');
 
-    window.onload = function() {
-      const browserInfo = getBrowserInfo();
-      displayMessage(browserInfo);
-    };
+// Get the browser name and version using the navigator object
+const browserName = navigator.userAgent;
+const browserVersion = navigator.appVersion;
 
-    function getBrowserInfo() {
-      const browserName = navigator.appName;
-      const browserVersion = navigator.appVersion;
-      return {
-        name: browserName,
-        version: browserVersion
-      };
-    }
+// Create the message to be displayed
+const message = "You are using " + browserName + " version " + browserVersion;
 
-    function displayMessage(browserInfo) {
-		
-      const message = "You are using " + browserInfo.name + " " + browserInfo.version;
-      document.getElementById("browser-info").innerHTML = message;
-    }
-  
+// Set the message as the content of the browser-info element
+browserInfoElement.textContent = message;
